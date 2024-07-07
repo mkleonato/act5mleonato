@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="w_form">
+    <div class="w_form_title">
+      <label for="title">Título de la noticia:</label>
+      <input
+        type="text"
+        id="title"
+        placeholder="aqui el título de la noticia del blog"
+        [(ngModel)]="newNoticia.title"
+      />
+    </div>
+
+    <div class="w_form_imageUrl">
+      <label for="imageUrl">URL de la Imagen:</label>
+      <input
+        type="url"
+        id="imageUrl"
+        placeholder="la url de la fotografía a incluir"
+        [(ngModel)]="newNoticia.imageUrl"
+      />
+    </div>
+
+    <div class="w_form_content">
+      <p>Contenido principal de la noticia:</p>
+      <label for="content"></label>
+      <textarea
+        id="content"
+        rows="10"
+        placeholder="este es el cuerpo de la noticia, no más de 10 lineas por favor y, en un solo párrafo"
+        [(ngModel)]="newNoticia.content"
+      ></textarea>
+    </div>
+    <div class="w_form_date">
+      <label for="date">Fecha:</label>
+      <input
+        type="date"
+        id="date"
+        placeholder="fecha publicacion de la noticia"
+        [(ngModel)]="newNoticia.date"
+      />
+    </div>
+
+    <button class="botonGuardar" (click)="guardarNoticia()">Guardar</button>
+  </div>
+
+  <div class="w_noticia">
+    <article [innerHTML]="cargarNoticia()"></article>
+  </div>
+</div>
